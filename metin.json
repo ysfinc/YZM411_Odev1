@@ -1,0 +1,39 @@
+{
+  "_aciklama": "Bu dosyayı SİZ doldurursunuz. 'TASLAK' ile başlayan veya boş kalan alanlar raporda kırmızı görünür. Tahminleri deneyi çalıştırmadan ÖNCE yazın. Ölçüm sayıları rapora notebook tarafından otomatik eklenir; burada yalnızca yorumlarınızı yazın.",
+
+  "ad_soyad": "",
+  "kamera_notu": "TASLAK - Telefon modeli; otomatik pozlama/beyaz dengesi açık mı kapalı mı? (Açıksa 'yalnızca ışık değişti' diyemeyiz.) Notebook EXIF'ten okuduğunu cikti/exif.csv'ye yazar.",
+
+  "deneyler": {
+    "4": {
+      "tahmin": "TASLAK - Aynı fiziksel noktanın RGB değerleri gölgede üç kanalda da düşecek, lambada ise lambanın rengine göre kayacak (sıcak lambada R artıp B düşecek). OpenCV dosyayı BGR okuduğu için dönüştürmeden yazdırılan ilk değer B olacak.",
+      "ne_gordum": "",
+      "neden": "",
+      "kontrol": ""
+    },
+    "5": {
+      "tahmin": "TASLAK - Gölgede R, G ve B'nin hepsi düşeceği için sabit RGB maskesi küçülecek; HSV maskesi ton (H) sayesinde daha az etkilenecek ama V alt eşiği nedeniyle o da küçülebilir. Lambada sarımsı yüzeyler eşiği geçip maskeyi büyütebilir.",
+      "ne_gordum": "",
+      "neden": "",
+      "kontrol": ""
+    },
+    "6": {
+      "tahmin": "TASLAK - b=+40 ortalamayı yaklaşık 40 artıracak ama 255'te kırpılan parlak pikseller yüzünden artış 40'tan az olacak. γ=0,5 karanlıkları açıp ortalamayı yükseltecek, γ=2,0 düşürecek; ölçülen ortalama 255·(ortalama/255)^γ formülünden biraz sapacak.",
+      "ne_gordum": "",
+      "neden": "",
+      "kontrol": ""
+    },
+    "7": {
+      "tahmin": "TASLAK - 1/4 küçültmede ince harfler 1–2 piksele inecek. En yakın komşu bazı çizgileri tamamen atlayıp kopuk/sahte desen üretecek; alan ortalaması harfleri griye çevirecek ama sahte desen üretmeyecek. Büyütme kaybolan yazıyı geri getirmeyecek.",
+      "ne_gordum": "",
+      "neden": "",
+      "kontrol": ""
+    }
+  },
+
+  "soru_sari_arka_plan": "",
+  "soru_buyutme": "",
+  "tutmayan_tahmin": "",
+
+  "yz_beyani": "TASLAK - Araç: Claude (Anthropic), Claude Code. Amaç: odev1.ipynb kod iskeletinin (yükleme, eşikleme, gama, küçültme, rapor/ZIP üretimi) yazılması ve tahmin taslakları. Etkilediği dosyalar: odev1.ipynb (tüm hücreler), ayarlar.json, metin.json şablonu. Doğrulama: Notebook'u kendi fotoğraflarımla baştan sona çalıştırdım; 64→128/16 gama kontrolünü, piksel değerlerini ve maske oranlarını elle kontrol ettim; tahminleri ve yorumları kendim yazdım/düzelttim."
+}
