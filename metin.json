@@ -1,6 +1,6 @@
 {
  "_aciklama": "Bu dosyayı SİZ doldurursunuz. 'TASLAK' ile başlayan veya boş kalan alanlar raporda kırmızı görünür. Tahminleri deneyi çalıştırmadan ÖNCE yazın. Ölçüm sayıları rapora notebook tarafından otomatik eklenir; burada yalnızca yorumlarınızı yazın.",
- "ad_soyad": "",
+ "ad_soyad": "Yusuf İnce",
  "kamera_notu": "Tek gerçek fotoğraf (telefon, masa üstünde siyah fare + bej ahşap masa). Fotoğraf sohbet üzerinden .webp olarak aktarıldığı için EXIF silinmiş (cikti/exif.csv boş): otomatik pozlama/beyaz dengesi bilinmiyor. Gölge ve lamba görüntüleri gerçek çekim değil, simule_et.py ile üretildi; bu yüzden 'yalnızca ışık değişti' iddiası gerçek sahne için değil, yalnızca simülasyon modeli için geçerli. Sahnede renkli nesne olarak bej masa yüzeyi, yazı olarak faredeki 'logi' logosu kullanıldı.",
  "deneyler": {
   "4": {

@@ -20,4 +20,4 @@ Araç: Claude (Anthropic), Claude Code. Amaç: odev1.ipynb'nin tüm kodunun, sim
 - matplotlib: 3.10.8
 - pillow: 11.3.0
 - platform: Windows-11-10.0.26200-SP0
-- calistirma_zamani: 2026-11-11T12:37:57
+- calistirma_zamani: 2026-11-11T12:38:42
