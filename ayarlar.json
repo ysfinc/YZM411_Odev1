@@ -1,6 +1,6 @@
 {
  "_aciklama": "Tum koordinatlar NORMAL isikli fotograftaki piksel koordinatlaridir. Kutu bicimi: [x, y, genislik, yukseklik]. Koordinatlari bulmak icin once notebook'u calistirin ve cikti/koordinat_izgarasi.png dosyasina bakin.",
- "ogrenci_no": "OgrenciNo",
+ "ogrenci_no": "230212010",
  "fotograflar": {
   "normal": "foto/normal.jpg",
   "golge": "foto/golge_SIMULE.jpg",
