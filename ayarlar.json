@@ -1,23 +1,53 @@
 {
-  "_aciklama": "Tum koordinatlar NORMAL isikli fotograftaki piksel koordinatlaridir. Kutu bicimi: [x, y, genislik, yukseklik]. Koordinatlari bulmak icin once notebook'u calistirin ve cikti/koordinat_izgarasi.png dosyasina bakin.",
-
-  "ogrenci_no": "OgrenciNo",
-
-  "fotograflar": {
-    "normal": "foto/normal.jpg",
-    "golge": "foto/golge.jpg",
-    "lamba": "foto/lamba.jpg"
-  },
-
-  "nesne_ornek_kutu": [0, 0, 60, 60],
-  "nesne_tam_kutu": null,
-  "pikseller": [[0, 0], [10, 10], [20, 20]],
-  "yazi_kutu": [0, 0, 400, 400],
-
-  "esik_payi": {"rgb": 25, "h": 6, "s_alt": 40, "v_alt": 40},
-  "esik_manuel": null,
-
-  "parlaklik_b": 40,
-  "gamalar": [0.5, 2.0],
-  "kucultme_orani": 4
+ "_aciklama": "Tum koordinatlar NORMAL isikli fotograftaki piksel koordinatlaridir. Kutu bicimi: [x, y, genislik, yukseklik]. Koordinatlari bulmak icin once notebook'u calistirin ve cikti/koordinat_izgarasi.png dosyasina bakin.",
+ "ogrenci_no": "OgrenciNo",
+ "fotograflar": {
+  "normal": "foto/normal.jpg",
+  "golge": "foto/golge_SIMULE.jpg",
+  "lamba": "foto/lamba_SIMULE.jpg"
+ },
+ "nesne_ornek_kutu": [
+  120,
+  1040,
+  120,
+  120
+ ],
+ "nesne_tam_kutu": null,
+ "pikseller": [
+  [
+   200,
+   1100
+  ],
+  [
+   1100,
+   950
+  ],
+  [
+   1450,
+   300
+  ]
+ ],
+ "yazi_kutu": [
+  1000,
+  560,
+  240,
+  140
+ ],
+ "esik_payi": {
+  "rgb": 25,
+  "h": 6,
+  "s_alt": 40,
+  "v_alt": 40
+ },
+ "esik_manuel": null,
+ "parlaklik_b": 40,
+ "gamalar": [
+  0.5,
+  2.0
+ ],
+ "kucultme_orani": 4,
+ "simule_kosullar": [
+  "golge",
+  "lamba"
+ ]
 }

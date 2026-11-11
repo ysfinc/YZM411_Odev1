@@ -1,0 +1,4 @@
+﻿yontem,kucuk_boyut,PSNR_dB(buyutulmus vs ozgun),Laplasyen_varyansi
+INTER_NEAREST,60x35,30.01,181.1
+INTER_AREA,60x35,32.61,111.6
+özgün,240x140,,80.6

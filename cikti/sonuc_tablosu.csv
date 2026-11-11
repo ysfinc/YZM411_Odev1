@@ -1,0 +1,19 @@
+﻿adim,olcum,deger
+4,"boyut (H,W,C)","(1411, 1600, 3)"
+4,veri türü,uint8
+4,değer aralığı,0-255
+5,RGB maske alan oranı % (Normal ışık),64.172
+5,HSV maske alan oranı % (Normal ışık),66.115
+5,RGB maske alan oranı % (Gölge (simüle)),1.634
+5,HSV maske alan oranı % (Gölge (simüle)),2.066
+5,RGB maske alan oranı % (Farklı lamba (simüle)),10.315
+5,HSV maske alan oranı % (Farklı lamba (simüle)),54.99
+6,ortalama b=+40 (formül tahmini / ölçülen),181.50 / 181.36
+6,ortalama γ=0.5 (formül tahmini / ölçülen),189.95 / 181.08
+6,ortalama γ=2.0 (formül tahmini / ölçülen),78.52 / 96.47
+7,Nyquist üstü enerji payı %,4.37
+7,PSNR dB INTER_NEAREST,30.01
+7,PSNR dB INTER_AREA,32.61
+7,şerit (periyot 3) baskın periyot / kontrast INTER_NEAREST,12.0 / 120.2
+7,şerit (periyot 3) baskın periyot / kontrast INTER_AREA,12.0 / 30.2
+7,şerit (periyot 3) baskın periyot / kontrast özgün,3.0 / 120.2

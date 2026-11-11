@@ -22,3 +22,8 @@
    PDF'te kırmızı yazı kalmadığından emin olun. PDF'i GitHub'a da yükleyin.
 
 Komut satırından tek seferde: `jupyter nbconvert --to notebook --execute --inplace odev1.ipynb`
+
+## Bu teslimdeki veri hakkında (sınırlılık)
+Yalnızca `foto/normal.jpg` gerçek fotoğraftır. `foto/golge_SIMULE.jpg` ve `foto/lamba_SIMULE.jpg`, `simule_et.py` ile
+lineer ışık uzayında kanal kazançları uygulanarak **dijital olarak üretilmiştir**; gerçek çekim değildir.
+Yeniden üretmek için: `python simule_et.py`, ardından notebook'u çalıştırın.

@@ -1,39 +1,35 @@
 {
-  "_aciklama": "Bu dosyayı SİZ doldurursunuz. 'TASLAK' ile başlayan veya boş kalan alanlar raporda kırmızı görünür. Tahminleri deneyi çalıştırmadan ÖNCE yazın. Ölçüm sayıları rapora notebook tarafından otomatik eklenir; burada yalnızca yorumlarınızı yazın.",
-
-  "ad_soyad": "",
-  "kamera_notu": "TASLAK - Telefon modeli; otomatik pozlama/beyaz dengesi açık mı kapalı mı? (Açıksa 'yalnızca ışık değişti' diyemeyiz.) Notebook EXIF'ten okuduğunu cikti/exif.csv'ye yazar.",
-
-  "deneyler": {
-    "4": {
-      "tahmin": "TASLAK - Aynı fiziksel noktanın RGB değerleri gölgede üç kanalda da düşecek, lambada ise lambanın rengine göre kayacak (sıcak lambada R artıp B düşecek). OpenCV dosyayı BGR okuduğu için dönüştürmeden yazdırılan ilk değer B olacak.",
-      "ne_gordum": "",
-      "neden": "",
-      "kontrol": ""
-    },
-    "5": {
-      "tahmin": "TASLAK - Gölgede R, G ve B'nin hepsi düşeceği için sabit RGB maskesi küçülecek; HSV maskesi ton (H) sayesinde daha az etkilenecek ama V alt eşiği nedeniyle o da küçülebilir. Lambada sarımsı yüzeyler eşiği geçip maskeyi büyütebilir.",
-      "ne_gordum": "",
-      "neden": "",
-      "kontrol": ""
-    },
-    "6": {
-      "tahmin": "TASLAK - b=+40 ortalamayı yaklaşık 40 artıracak ama 255'te kırpılan parlak pikseller yüzünden artış 40'tan az olacak. γ=0,5 karanlıkları açıp ortalamayı yükseltecek, γ=2,0 düşürecek; ölçülen ortalama 255·(ortalama/255)^γ formülünden biraz sapacak.",
-      "ne_gordum": "",
-      "neden": "",
-      "kontrol": ""
-    },
-    "7": {
-      "tahmin": "TASLAK - 1/4 küçültmede ince harfler 1–2 piksele inecek. En yakın komşu bazı çizgileri tamamen atlayıp kopuk/sahte desen üretecek; alan ortalaması harfleri griye çevirecek ama sahte desen üretmeyecek. Büyütme kaybolan yazıyı geri getirmeyecek.",
-      "ne_gordum": "",
-      "neden": "",
-      "kontrol": ""
-    }
+ "_aciklama": "Bu dosyayı SİZ doldurursunuz. 'TASLAK' ile başlayan veya boş kalan alanlar raporda kırmızı görünür. Tahminleri deneyi çalıştırmadan ÖNCE yazın. Ölçüm sayıları rapora notebook tarafından otomatik eklenir; burada yalnızca yorumlarınızı yazın.",
+ "ad_soyad": "",
+ "kamera_notu": "Tek gerçek fotoğraf (telefon, masa üstünde siyah fare + bej ahşap masa). Fotoğraf sohbet üzerinden .webp olarak aktarıldığı için EXIF silinmiş (cikti/exif.csv boş): otomatik pozlama/beyaz dengesi bilinmiyor. Gölge ve lamba görüntüleri gerçek çekim değil, simule_et.py ile üretildi; bu yüzden 'yalnızca ışık değişti' iddiası gerçek sahne için değil, yalnızca simülasyon modeli için geçerli. Sahnede renkli nesne olarak bej masa yüzeyi, yazı olarak faredeki 'logi' logosu kullanıldı.",
+ "deneyler": {
+  "4": {
+   "tahmin": "Masa pikseli P1 simüle gölgede üç kanalda da yaklaşık yarıya düşecek, B oransal olarak daha az düşecek; simüle lambada R artacak, B belirgin düşecek. Neredeyse siyah fare pikseli P2 (≈4, 8, 9) mutlak olarak çok az değişecek, çünkü çarpımsal ışık değişimi küçük değeri az kaydırır.",
+   "ne_gordum": "Masa pikseli P1 gölgede (202,188,153)→(117,113,101): R %42, B %34 düştü; lambada (177,142,88): R bile 202'den 177'ye düştü, B %42 düştü. Siyah fare pikseli P2 (4,8,9) her koşulda 0–9 aralığında kaldı. 5×5 ortalamalar tek pikselden en fazla ~3 farklı.",
+   "neden": "Işık lineer uzayda çarpımsal etki eder; sRGB kodlaması (≈2,2 gama) yüzünden lineer 0,30 kazanç 8 bitte ≈0,58'e karşılık gelir. Lambada P1, lamba merkezinden uzak olduğu için mesafe azalması (≈0,53) kırmızı kazancını (1,10·1,25) yendi. Siyah pikselde çarpım küçük mutlak değişim üretir ve gürültü/JPEG baskın olur.",
+   "kontrol": "Aynı noktada 5×5 komşuluk ortalamasına baktım (tek piksel gürültüsünü ayırmak için); R/B oranını hesapladım: lambada 1,32→2,01'e çıktı, yani renk kayması var ama mutlak R düştü. Gerçek çekimde aynı ölçüm kilitli pozlamayla tekrarlanmalı."
   },
-
-  "soru_sari_arka_plan": "",
-  "soru_buyutme": "",
-  "tutmayan_tahmin": "",
-
-  "yz_beyani": "TASLAK - Araç: Claude (Anthropic), Claude Code. Amaç: odev1.ipynb kod iskeletinin (yükleme, eşikleme, gama, küçültme, rapor/ZIP üretimi) yazılması ve tahmin taslakları. Etkilediği dosyalar: odev1.ipynb (tüm hücreler), ayarlar.json, metin.json şablonu. Doğrulama: Notebook'u kendi fotoğraflarımla baştan sona çalıştırdım; 64→128/16 gama kontrolünü, piksel değerlerini ve maske oranlarını elle kontrol ettim; tahminleri ve yorumları kendim yazdım/düzelttim."
+  "5": {
+   "tahmin": "Hedef renkli bölge bej masa (H≈20, S≈55) olduğu için normal ışıkta maske masanın büyük kısmını seçecek. Gölgede tüm kanallar ve V alt eşiğin altına ineceği için hem RGB hem HSV maskesi neredeyse sıfırlanacak; lambada B düştüğü için RGB maskesi küçülecek, HSV'de ise ton turuncuya kaydığı ve S arttığı için maske kısmen korunacak.",
+   "ne_gordum": "Donmuş eşiklerle normalde RGB %64,2, HSV %66,1 (masanın neredeyse tamamı). Gölgede RGB %1,6, HSV %2,1: yalnızca gölge dışındaki sağ üst masa köşesi kaldı. Lambada RGB %10,3'e çöktü (yalnızca lambaya yakın sol üst), HSV %55,0 ile çoğunu korudu; örnek kutu içinde RGB %0, HSV %100.",
+   "neden": "Gölgede tüm kanallar R≥165, G≥147, B≥115 alt sınırlarının ve V≥150'nin altına indi; ton (H 22) aralıkta kaldı ama V eşiği maskeyi kesti — HSV her aydınlatmaya dayanıklı değil. Lambada B 90'a düşüp RGB B≥115 sınırını kırdı; HSV'de H 18 (12–29 aralığında) ve S yükseldi, sadece uzak sağ alt bölge V<150 olduğu için düştü.",
+   "kontrol": "Örnek kutu içindeki ortalama RGB ve medyan HSV değerlerini (tablo) eşiklerle tek tek karşılaştırdım; hangi kanalın sınırı kırdığını buradan görüyorum. Ayrıca V alt sınırını kaldırınca gölgede HSV maskesinin geri gelip gelmediği test edilebilir (eşik yeniden ayarlanmadan, ayrı deney olarak)."
+  },
+  "6": {
+   "tahmin": "b=+40 ortalamayı 40'tan biraz az artıracak, çünkü parlak masa piksellerinin bir kısmı 255'te kırpılacak. γ=0,5 ortalamayı yükseltecek ve siyah fareyi en çok açacak; γ=2,0 ortalamayı düşürecek; γ=0,5'te ölçülen ortalama formülün altında, γ=2,0'da üstünde kalacak (Jensen).",
+   "ne_gordum": "Ortalama 141,5. b=+40 sonrası 181,36 (beklenen 181,5; yalnızca 0,14 eksik, değerlerin %3,3'ü 255'te kırpıldı). γ=0,5: formül 189,95, ölçülen 181,08. γ=2,0: formül 78,52, ölçülen 96,47. Kontrol: 64→127,7 ve 16,1.",
+   "neden": "Kırpılan değerler 255'i çoğunlukla az aştığı (parlak masa ~215–230) için kayıp küçük kaldı. Gama doğrusal olmadığından 'ortalamanın gaması' ≠ 'gamaların ortalaması' (Jensen): γ<1 içbükey → ölçülen formülün altında, γ>1 dışbükey → üstünde. Görüntü iki tepeli (siyah fare + açık masa) olduğu için sapma büyük.",
+   "kontrol": "Kırpılma kaybını Σmax(I+40−255,0)/N ile ayrıca hesapladım ve 0,14 farkla eşleşti; gama için histogramlara (adim6_donusumler.png) baktım: γ=2,0 karanlık fareyi 0'a yaklaştırdı (0 değerli %3,6)."
+  },
+  "7": {
+   "tahmin": "'logi' harflerinin çizgileri yaklaşık 8 piksel kalınlığında, 1/4 küçültmede 2 piksele inecek. En yakın komşu bazı harf kenarlarını kopuk/basamaklı gösterecek; alan ortalaması harfleri daha gri ve bulanık ama sürekli bırakacak; büyütme kaybolan ayrıntıyı geri getirmeyecek.",
+   "ne_gordum": "240×140 kesit 60×35'e indi. 'logi' her iki yöntemde de hâlâ okunuyor; NEAREST basamaklı kenar ve benekli doku üretti, AREA daha yumuşak/gri. PSNR: NEAREST 30,0 dB, AREA 32,6 dB. Büyütülmüş görüntülerin Laplasyen varyansı (181 ve 112) özgünden (81) yüksek. Şerit testinde gerçek periyot 3 px iken iki yöntem de 12 px'lik sahte periyot verdi; kontrast NEAREST 120, AREA 30.",
+   "neden": "Harf çizgileri ~8–10 px kalınlığında olduğu için 1/4'te ~2 px kaldı ve örneklendi; kesitteki enerjinin yalnızca %4,4'ü yeni Nyquist sınırının üstünde. NEAREST her 4×4 bloktan tek piksel alıp gerisini atar; AREA ortalar (kutu filtresi). Laplasyen artışı geri gelen ayrıntı değil, NN büyütmenin blok kenarları. AREA kutu filtresi ideal alçak geçiren olmadığından şeritte zayıf bir sahte desen bıraktı.",
+   "kontrol": "Sentetik şerit kontrolüyle (periyodu bilinen desen) sahte deseni ölçtüm; PSNR ile özgüne yakınlığı, FFT ile Nyquist üstü enerji payını hesapladım. Daha ince yazı (gazete puntosu) ile tekrarlanırsa harflerin kaybolması beklenir."
+  }
+ },
+ "soru_sari_arka_plan": "Bu sahnede hedef rengini bej/sarımsı masadan aldım; eşik bir NESNEYİ değil bir RENK aralığını tanımlar, bu yüzden aynı renkteki tüm arka plan (masanın %64'ü) 'hedef' oldu. Ayrıca siyah faredeki parlama çizgileri masanın sıcak ışığını yansıttığı için RGB maskesinde seçildi; lambada sarımsı ışık rengi tüm yüzeyleri aynı tona ittiği için renk, nesneyi arka plandan ayırmaya yetmez. Alan oranı bu yüzden doğruluk değildir.",
+ "soru_buyutme": "Büyütme (NN) yalnızca 60×35 küçük görüntüdeki pikselleri 4×4 bloklara kopyalar; küçültmede atılan 15/16 piksel (NEAREST) veya ortalamada yok olan ayrıntı (AREA) hiçbir yerde saklanmaz. Yeni Nyquist üstündeki %4,4'lük enerji kalıcı olarak gitti ya da sahte düşük frekansa katlandı; büyütmede görülen 'keskinlik' (Laplasyen 81→181) logonun ayrıntısı değil blok kenarlarıdır.",
+ "tutmayan_tahmin": "Adım 4: lambada P1'in R değerinin artacağını tahmin ettim, ölçülen 202→177 düştü. Nedeni: simüle lamba noktasal ve P1 ondan uzak; mesafeyle azalma kırmızı kazancını yendi — renk sıcaklaştı (R/B 1,32→2,01) ama parlaklık düştü. Adım 7: NEAREST'in harfleri koparacağını tahmin ettim; çizgiler 2 px kaldığı için kopmadı, yalnızca basamaklandı.",
+ "yz_beyani": "Araç: Claude (Anthropic), Claude Code. Amaç: odev1.ipynb'nin tüm kodunun, simule_et.py'nin (gölge ve lamba görüntülerini tek gerçek fotoğraftan üretir), koordinat seçiminin ve metin.json'daki tahmin ile yorum metinlerinin yazılması. Tahminler notebook çalıştırılmadan önce yazıldı; yorumlar ölçülen sayılardan (cikti/*.csv) türetildi. Etkilediği dosyalar: tüm .ipynb hücreleri, simule_et.py, ayarlar.json, metin.json. Doğrulama: notebook baştan sona çalıştırıldı, 64→127,7/16,1 gama kontrolü, BGR/RGB eşitlik kontrolü (assert) ve kırpılma kaybı ayrı formülle doğrulandı. SINIRLILIK: gölge ve lamba gerçek çekim değildir."
 }
